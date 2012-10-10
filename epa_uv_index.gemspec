@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["greg@shelrick.com"]
   gem.description   = %q{Ruby client library for accessing the U.S. EPA's UV Index API (http://www.epa.gov/enviro/facts/services.html#uvindex)'}
   gem.summary       = %q{Get UV Index values by daily and hourly for zip code or city/state}
-  gem.homepage      = ""
+  gem.homepage      = "http://github.com/GSA-OCSIT/epa_uv_index"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
