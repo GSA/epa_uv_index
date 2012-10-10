@@ -4,6 +4,12 @@ describe EpaUvIndex::Client do
   
   describe "#daily_for" do
     context "when querying for a daily UV index for a zip code" do
+      context "when neither a zip nor a city/state are passed as parameters" do
+        it "should raise an exception" do
+          lambda { EpaUvIndex::Client.daily_for(:city => 'Baltimore')}.should raise_error "Please provide either a city/state or a zip code."
+        end
+      end
+      
       context "when the response is good" do
         before do
           response = mock(Object)
@@ -100,6 +106,12 @@ describe EpaUvIndex::Client do
   end
   
   describe "#hourly_for" do
+    context "when neither a zip nor a city/state are passed as parameters" do
+      it "should raise an exception" do
+        lambda { EpaUvIndex::Client.hourly_for(:city => 'Baltimore')}.should raise_error "Please provide either a city/state or a zip code."
+      end
+    end
+
     context "when querying for an hourly UV index for a zip code" do
       context "when the response is good" do
         before do

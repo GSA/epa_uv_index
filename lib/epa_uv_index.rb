@@ -27,7 +27,7 @@ module EpaUvIndex
     protected
   
     def self.do_request(base_url, params)
-      raise Exception("Please provide either a city/state or a zip code.") unless params[:zip] or (params[:city] and params[:state])
+      raise "Please provide either a city/state or a zip code." unless params[:zip] or (params[:city] and params[:state])
       request_url = build_request_url(base_url, params)
       http_response = HTTParty.get(request_url)
       begin
