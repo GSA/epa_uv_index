@@ -7,7 +7,7 @@ Gem::Specification.new do |gem|
   gem.name          = "epa_uv_index"
   gem.version       = EpaUvIndex::VERSION
   gem.authors       = ["Greg Gershman"]
-  gem.email         = ["greg@shelrick.com"]
+  gem.email         = ["gregory.gershman@gsa.gov"]
   gem.description   = %q{Ruby client library for accessing the U.S. EPA's UV Index API (http://www.epa.gov/enviro/facts/services.html#uvindex)'}
   gem.summary       = %q{Get UV Index values by daily and hourly for zip code or city/state}
   gem.homepage      = "http://github.com/GSA-OCSIT/epa_uv_index"
