@@ -1,6 +1,6 @@
 # EpaUvIndex
 
-TODO: Write a gem description
+This is a really simple Ruby client library for accessing the U.S. EPA's UV Index REST API (information here: http://www.epa.gov/enviro/facts/services.html#uvindex)
 
 ## Installation
 
@@ -18,7 +18,25 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Retrieve UV indexes for:
+
+Hourly, by zip code
+
+    $ EpaUvIndex::Client.hourly_for(:zip => 21209)
+
+Hourly, by city/state
+
+    $ EpaUvIndex::Client.hourly_for(:city => 'Baltimore', :state => 'md')
+    
+Daily, by zip code
+
+    $ EpaUvIndex::Client.daily_for(:zip => 21209)
+
+Daily, by city/state
+
+    $ EpaUvIndex::Client.daily_for(:city => 'Baltimore', :state => 'md')
+    
+Missing parameters or bad HTTP responses result in Exceptions being raised.
 
 ## Contributing
 

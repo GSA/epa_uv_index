@@ -41,7 +41,7 @@ module EpaUvIndex
       if params[:zip]
         "#{base_url}/ZIP/#{params[:zip]}/json"
       else
-        "#{base_url}/CITY/#{params[:city]}/#{params[:state]}/json"
+        "#{base_url}/CITY/#{params[:city]}/STATE/#{params[:state]}/json"
       end
     end
   
@@ -49,7 +49,7 @@ module EpaUvIndex
       if http_response.code == 200
         return JSON.parse(http_response.body)
       else
-        raise Exception(http_response.message)
+        raise http_response.message
       end
     end
   end
